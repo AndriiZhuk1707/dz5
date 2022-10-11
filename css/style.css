@@ -1,6 +1,10 @@
 /* :root{  --pri-text-color: #212121 } 
 .main{ background-color: var(--pri-text-color)} */
 
+/* 
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1); */
+
+
 :root {
     --primary-text-color: #212121;
     --focus-text-color: #2196F3;
@@ -34,16 +38,18 @@ a {
 }
 
 
-a,p,li,ul,h1,h2,h3,button {
+a,
+p,
+li,
+ul,
+h1,
+h2,
+h3,
+button {
    
    padding: 0;
    margin: 0;
 }
-
-
-
-a { margin: 0;
-    text-decoration: none;}
 
 img { display: block;
     max-width: 100%;
@@ -71,10 +77,8 @@ address{
    
 }
 
-/* header */
-
 .Logo {
-    margin-right: 95px;
+
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 26px;
@@ -87,7 +91,6 @@ address{
     padding-bottom: 25px;
     margin-right: 95px;
 }
-
 
 .header {
     border-bottom: 1px solid #ECECEC;
@@ -102,28 +105,30 @@ address{
     display: flex;
 }
 
-.header-list {
+.nav-list {
     padding-inline-start: 0px;
     display: flex;
-    
-    
 }
 
+.nav-list>.link:not(:last-child) {
+    margin-right: 50px;
+}
 
-.logospan-footer{color: var(--other-text-color);}
 
 
 .logospan {
     color: var(--focus-text-color);
 }
 
+
 /* .activ.corrent {
     color: var(--focus-text-color);
 } */
 
-.link {
-    
-    
+.nav-knopky {
+    display: inline-block;
+    padding-top: 32px;
+    padding-bottom: 32px;
     color: var(--logo-text-color);
     font-weight: 500;
     font-size: 14px;
@@ -131,17 +136,15 @@ address{
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link.active.current {color: var(--focus-text-color);}
 
-.link.border { 
+.nav-knopky.activ.corrent{color: var(--focus-text-color);}
+
+.link.element {
     position: relative;
-    padding-top: 32px;
-    padding-bottom: 32px;
     display: inline-block;
-   
 }
 
-.link::after {
+.nav-knopky::after {
     position: absolute;
     bottom: -1px;
     left: 0;
@@ -154,86 +157,55 @@ address{
     border-radius: 4px;
     background-color: var(--focus-text-color);
     transition:opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
     
-}
 
-.header-list {
-    padding-top: 32px;
-    padding-bottom: 32px;
-    padding-inline-start: 0px;
-    display: flex;
-    list-style-type: none;
-    text-decoration: none
-   
-}
 
-.link:hover::after,
-.link:focus::after {
-    color: var(--focus-text-color);
-    opacity: 1;
 }
 
 .nav-knopky:hover,
-.nav-knopky:focus{ color: var(--focus-text-color);}
-
-
-.header-list.link.active.current{
+.nav-knopky:focus {
     color: var(--focus-text-color);
-
-}
-.link.active.current {
-    color: var(--accent-color);
 }
 
-.header-list>.link:not(:last-child) {
-    margin-right: 50px;
-}
-
-.list {margin: 0px;
-    list-style-type: none;
-    }
-
-.link {
-   
-  
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    color: var(--logo-text-color);
-    list-style-type:none;
+.nav-knopky:hover::after,
+.nav-knopky:focus::after {
+    color: var(--focus-text-color);
+    opacity: 1;
     
- }
-
-.kontakt-list {  
-    display: flex;
-    color: var(--primary-text-color);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.2;
-
-    }
-
-
-.icon-kontakt-mail {
-    margin-right: 10px;
-    fill: currentColor;
-
-}
-
-.icon-kontakt-contact{ 
-    margin-right: 10px;
-    fill: currentColor;
-  
 }
 
 .kontakt-list {
     padding-inline-start: 0;
     margin-left: auto;
-    }
+}
 
-.kontakt-mail,
-.kontakt-contact {
+.communication {
+    display: flex;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+
+}
+
+
+
+.icon-mail-nav {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+.icon-tel-nav {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+.communication-tel {
+    margin-left: 50px;
+}
+
+.communication-mail,
+.communication-tel {
     display: flex;
     align-items: center;
     padding: 4px 4px;
@@ -243,27 +215,14 @@ address{
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.kontakt-contact {
-    margin-left: 50px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.2 ;
-    letter-spacing: 0.02em;
-    color: var(--about-text-color) 
+
+.communication-mail:hover,
+.communication-mail:focus {
+    color: var(--focus-text-color);
 }
 
-
-.kontakt-mail {
-    display: flex;
-    color: var(--about-text-color);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
- 
-}
-
-.link :hover,
-.link :focus{
+.communication-tel:hover,
+.communication-tel:focus {
     color: var(--focus-text-color);
 }
 
@@ -344,7 +303,8 @@ address{
 }
 
 
-.modal-content {opacity:1;
+.modal-content {
+    opacity:1;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -361,6 +321,8 @@ address{
     position: absolute;
     top: 0;
     right: 0;
+    margin-top: 8px;
+    margin-right: 8px;
 }
 
 .button-modal-cloce {
@@ -369,15 +331,11 @@ address{
     border: 2px solid rgba(0, 0, 0, 0.1);
     width: 30px;
     height: 30px;
-    margin: 8px 8px 543px 490px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-
-
-
 
 
 
@@ -399,6 +357,11 @@ address{
     padding: 0;
     display: flex;
 }
+
+.about-list-item:not(:last-child) {
+    margin-right: 30px;
+}
+
 
 .about-title {
     position: absolute;
@@ -425,10 +388,6 @@ address{
 }
 
 
-.about-list-item:not(:last-child) {
-    margin-right: 30px;
-}
-
 .advantage-title {
     margin-bottom: 10px;
     font-family: Roboto;
@@ -450,7 +409,7 @@ address{
        /*Whot work*/
 
 .conteiner-work {
-     padding: 0px 0px 93px 0px;
+     padding: 93px 0px 93px 0px;
     }
 
 .develops-list {
@@ -465,15 +424,6 @@ address{
     margin-right: 30px;
     }
 
-.develops { 
-    padding-top: 93px;
-    padding-bottom: 50px;
-    margin: 0;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.2;
-    text-align: center;
-}
 
 .work-list-item {
     position: relative;
@@ -500,13 +450,23 @@ address{
 
 }
 
+.develops { 
+    
+    margin: 0 0 50px 0;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+}
+
+
 
 
 
        /*Our team*/
 
 .conteiner-team {
-    background: #F5F4FA
+    background-color: #F5F4FA;
     }
 
 .conteiner-team-list {
@@ -580,7 +540,10 @@ address{
     height: 44px;
     justify-content: center;
     align-items: center;
+    border-radius: 50% ;
     color: #AFB1B8;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .list-Our-team:hover,
@@ -610,6 +573,10 @@ address{
     width: calc((100% - 5 * 30px) / 6);
 }
 
+.page-client:not(:last-child) {
+    margin-right: 30px;
+}
+
 
 .title-section-client{
 
@@ -624,11 +591,6 @@ address{
 }
 
 
-.page-client:not(:last-child) {
-    margin-right: 30px;
-}
-
-
 .List-compani {
     display: flex;
     justify-content: center;
@@ -637,6 +599,8 @@ address{
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     color: #AFB1B8;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .icon-clients {
@@ -690,6 +654,8 @@ address{
     font-size: 14px;
     line-height: 1.7;
     color: var(--other-text-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 
 }
 
 
@@ -699,6 +665,7 @@ address{
     font-size: 14px;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 
     }
 
 .footer-rozmir {margin-top: 9px;
@@ -716,7 +683,7 @@ address{
     line-height: 16px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    
+   
     }
 
 
@@ -741,6 +708,7 @@ address{
     border-radius: 50%;
     color: #FFFFFF;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-Our-team-footer:hover,
@@ -773,10 +741,12 @@ address{
 
 
 .section-list {
+    margin-bottom: 50px;
     padding-inline-start: 0px;
     display: flex;
     justify-content: center;
-    margin: 0px;
+    list-style-type:none
+    
 }
 
 
@@ -785,7 +755,7 @@ address{
 }
 
 .list-portfolio {
-    
+    gap: 30px;
     display: flex;
     flex-wrap: wrap;
     margin: 0;
@@ -801,16 +771,15 @@ address{
     position: relative;
     display: block;
     width: 370px;
-    margin-right: 30px;
-    margin-bottom: 30px;
+}
+.link-portfolio {
+    display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link-portfolio{
-transition:box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
-}
 .link-portfolio:hover,
-.link-portfolio:focus{box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);}
+.link-portfolio:focus{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);}
 
 
 .foto-portfilio{ 
@@ -862,7 +831,6 @@ transition:box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 .btn-section {
     
-    margin-bottom: 50px;
     padding: 6px 22px 6px 22px;
     background: #F5F4FA;
     border-radius: 4px;
@@ -872,15 +840,11 @@ transition:box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.6;
-    color: var(--primary-text-color)
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) , 
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1)
-    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-link {
-    list-style-type:none
+    color: var(--primary-text-color);
     
+   
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) , background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) , box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   
 }
 
 .btn-link :hover,
@@ -893,7 +857,7 @@ transition:box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section-title {
-margin-bottom: 10px;
+margin-bottom: 4px;
 font-weight: 700;
 font-size: 18px;
 line-height: 2;
@@ -903,7 +867,7 @@ color: var(--primary-text-color)
 }
 
 .section-text {
-margin-top: 10px;
+
 font-size: 16px;
 line-height: 2;
 color:var(--about-text-color)
@@ -925,10 +889,10 @@ color:var(--about-text-color)
 
 
 
-    .foto-opaciti{position: relative;
-        overflow: hidden;}
+.foto-opaciti{position: relative;
+    overflow: hidden;}
         
-        .text-opaciti {
+.text-opaciti {
             position: absolute;
             top: 0;
             left: 0;
